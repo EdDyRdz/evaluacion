@@ -30,9 +30,3 @@ evaluacion/
 - **Mensaje:** `chore: initial project scaffold`
 - **Archivos agregados:** `package.json`, `app.js`, `index.js`, `README.md`
 - **Descripción:** Se crea la estructura base del proyecto y el endpoint `/` con Express.
-
-```bash
-git add package.json app.js index.js README.md
-git commit -m "chore: initial project scaffold"
-git push -u origin main
-
