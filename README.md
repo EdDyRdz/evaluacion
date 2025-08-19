@@ -23,10 +23,3 @@ evaluacion/
 └─ README.md
 
 ---
-
-## 📌 Cronología de commits
-
-### **Commit 1 — Inicializar proyecto**
-- **Mensaje:** `chore: initial project scaffold`
-- **Archivos agregados:** `package.json`, `app.js`, `index.js`, `README.md`
-- **Descripción:** Se crea la estructura base del proyecto y el endpoint `/` con Express.
