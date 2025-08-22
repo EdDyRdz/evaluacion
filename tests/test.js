@@ -5,6 +5,7 @@ describe('GET /', () => {
   it('should return 200 and status ok', async () => {
     const res = await request(app).get('/');
     expect(res.statusCode).toBe(200);
-    expect(res.body.status).toBe('alive'); // <-- cambio en commits intencionales
+    expect(res.body.status).toBe('ok');
+
   });
 });
