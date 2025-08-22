@@ -7,19 +7,20 @@ Incluye **CI/CD**, pruebas unitarias con **Jest**, y ejemplos de manejo seguro d
 
 ## 🗂 Estructura del proyecto
 
+```bash
 evaluacion/
-├─ .github/workflows/
-│ ├─ ci.yml
-│ └─ deploy-prod.yml
-├─ tests/
-│ └─ health.test.js
-├─ .dockerignore
-├─ .gitignore
-├─ .env.example
-├─ Dockerfile
-├─ app.js
-├─ index.js
-├─ package.json
-└─ README.md
-
----
+├── .github/
+│   └── workflows/
+│       ├── ci.yml
+│       └── deploy-prod.yml
+├── tests/
+│   └── health.test.js
+├── .dockerignore
+├── .gitignore
+├── .env.example
+├── Dockerfile
+├── app.js
+├── index.js
+├── package.json
+└── README.md
+```
