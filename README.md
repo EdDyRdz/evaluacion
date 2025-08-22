@@ -14,13 +14,14 @@ evaluacion/
 │       ├── ci.yml
 │       └── deploy-prod.yml
 ├── tests/
-│   └── health.test.js
+│   └── test.js
 ├── .dockerignore
 ├── .gitignore
 ├── .env.example
 ├── Dockerfile
 ├── app.js
 ├── index.js
+├── package-lock.json
 ├── package.json
 └── README.md
 ```
