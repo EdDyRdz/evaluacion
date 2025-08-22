@@ -22,7 +22,7 @@ jobs:
       - name: Trigger Render deploy (staging)
         uses: johnbeynon/render-deploy-action@v0.0.8
         with:
-          api-key: ${{ secrets.RENDER_WRONG_KEY }}   # --> intencional falla
+          api-key: ${{ secrets.RENDER_API_KEY }}
           service-id: ${{ secrets.RENDER_STAGING_SERVICE_ID }}
           wait-for-success: true
 
