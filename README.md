@@ -12,7 +12,6 @@ evaluacion/
 ├── .github/
 │   └── workflows/
 │       ├── ci.yml
-│       └── deploy-prod.yml
 ├── tests/
 │   └── test.js
 ├── .dockerignore
