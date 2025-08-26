@@ -1,7 +1,7 @@
 name: CI - test & build (staging)
 on:
   push:
-    branches: [ produccion ]
+    branches: [ main, produccion ]
 
 jobs:
   test:
