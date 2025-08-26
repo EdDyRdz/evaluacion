@@ -9,19 +9,35 @@ Incluye **CI/CD**, pruebas unitarias con **Jest**, y ejemplos de manejo seguro d
 
 ```bash
 evaluacion/
-├── .github/
-│   └── workflows/
-│       ├── ci.yml
-│       └── deploy-prod.yml
+├── backend/
+│   ├── github/
+│   │   └── workflows/
+│   │       ├── ci.yml
+│   ├── models/
+│   │   ├── User.js
+│   ├── routes/
+│   │   ├── authRoutes.js
+│   │   ├── userRoutes.js
+│   ├── .env
+│   ├── app.js
+│   ├── Dockerfile
+│   ├── index.js
+│   ├── package-lock.json
+│   ├── package.json
+├── frontend/
+│   ├── src/
+│   │   ├── pages/
+│   │   │   ├── Login.js
+│   │   │   ├── Register.js
+│   │   │   ├── Home.js
+│   │   ├── App.js
+│   │   ├── index.js
+│   ├── package-lock.json
+│   ├── package.json
+│   └── README.md
 ├── tests/
 │   └── test.js
 ├── .dockerignore
 ├── .gitignore
-├── .env.example
-├── Dockerfile
-├── app.js
-├── index.js
-├── package-lock.json
-├── package.json
 └── README.md
 ```

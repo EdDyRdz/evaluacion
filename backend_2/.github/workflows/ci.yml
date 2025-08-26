@@ -1,0 +1,41 @@
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      - run: npm ci
+      - run: npm test
+  deploy:
+    needs: test
+    if: success()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - id: 'auth'
+        uses: 'google-github-actions/auth@v2'
+        with:
+          credentials_json: '${{ secrets.GCP_SA_KEY }}'
+
+      - name: 'Set up Cloud SDK'
+        uses: 'google-github-actions/setup-gcloud@v2'
+
+      - name: 'Build and Push Docker Image'
+        run: |
+          gcloud auth configure-docker us-central1-docker.pkg.dev
+          docker build . --platform linux/amd64 -t us-central1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/uteq-repositorio/ota-remedial-backend2:${{ github.sha }}
+          docker push us-central1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/uteq-repositorio/ota-remedial-backend2:${{ github.sha }}
+
+      - name: 'Deploy to Cloud Run'
+        run: |
+          gcloud run deploy ota-remedial-backend2 \
+            --image us-central1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/uteq-repositorio/ota-remedial-backend2:${{ github.sha }} \
+            --region us-central1 \
+            --allow-unauthenticated
