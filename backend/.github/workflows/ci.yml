@@ -31,13 +31,13 @@ jobs:
       - name: 'Build and Push Docker Image'
         run: |
           gcloud auth configure-docker us-central1-docker.pkg.dev
-          docker build . --platform linux/amd64 -t us-central1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/uteq-repositorio/ota-remedial:${{ github.sha }}
-          docker push us-central1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/uteq-repositorio/ota-remedial:${{ github.sha }}
+          docker build . --platform linux/amd64 -t us-central1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/uteq-repositorio/web-backend1:${{ github.sha }}
+          docker push us-central1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/uteq-repositorio/web-backend1:${{ github.sha }}
 
       - name: 'Deploy to Cloud Run'
         run: |
-          gcloud run deploy ota-remedial-instance \
-            --image us-central1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/uteq-repositorio/ota-remedial:${{ github.sha }} \
+          gcloud run deploy web-backend1 \
+            --image us-central1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/uteq-repositorio/web-backend1:${{ github.sha }} \
             --region us-central1 \
             --allow-unauthenticated
 
