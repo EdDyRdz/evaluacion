@@ -12,7 +12,9 @@ jobs:
         with:
           node-version: '18'
       - run: npm ci
+        working-directory: ./backend
       - run: npm test
+        working-directory: ./backend
   deploy:
     needs: test
     if: success()
