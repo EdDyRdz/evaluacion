@@ -35,9 +35,7 @@ evaluacion/
 │   ├── package-lock.json
 │   ├── package.json
 │   └── README.md
-├── tests/
-│   └── test.js
-├── .dockerignore
-├── .gitignore
-└── README.md
+├── .github/
+│   └── workflows/
+│       ├── ci.yml
 ```
