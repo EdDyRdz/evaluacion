@@ -1,3 +1,4 @@
+name: CI 2 - test & build (staging)
 on:
   push:
     branches: [ main, produccion ]
